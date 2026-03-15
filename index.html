@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midnight Executive Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>System Dashboard</h1>
+
+        <div class="stats-container">
+            <div class="stat-card" onclick="shortcutCategory('employees')">
+                <div class="stat-icon">👤</div>
+                <div>
+                    <span class="stat-label">Total Employees</span>
+                    <span id="count-employees" class="stat-value">0</span>
+                </div>
+            </div>
+            <div class="stat-card" onclick="shortcutCategory('inventory')">
+                <div class="stat-icon">📦</div>
+                <div>
+                    <span class="stat-label">Total Inventory</span>
+                    <span id="count-inventory" class="stat-value">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="selection-box">
+            <div class="control-row">
+                <select id="catSelect" onchange="changeCategory(this.value)">
+                    <option value="">-- Choose Category --</option>
+                    <option value="employees">Employees List</option>
+                    <option value="inventory">Inventory Items</option>
+                </select>
+                <button class="import-btn" onclick="importFromJSON()">Import</button>
+                <button class="export-btn" onclick="exportToExcel()">Export</button>
+            </div>
+        </div>
+
+        <p id="message" style="text-align: center; color: #64748b; margin-bottom: 20px;"></p>
+
+        <div id="form-section" class="form-container" style="display:none;">
+            <h3 id="form-title">Add New Entry</h3>
+            <div class="field-group">
+                <label id="label-1"></label>
+                <input type="text" id="input-1" placeholder="...">
+            </div>
+            <div class="field-group">
+                <label id="label-2"></label>
+                <input type="text" id="input-2" placeholder="...">
+            </div>
+            <div class="field-group">
+                <label id="label-3"></label>
+                <input type="text" id="input-3" placeholder="...">
+            </div>
+            
+            <div class="form-actions">
+                <button id="save-btn" class="add-btn" onclick="addData()">Save to Database</button>
+                <button id="cancel-btn" class="cancel-btn" style="display:none;" onclick="cancelEdit()">Cancel Edit</button>
+            </div>
+        </div>
+
+        <div id="table-section" style="display:none;">
+            <div class="table-wrapper">
+                <table>
+                    <thead id="table-head"></thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "employees": [
+    {"f1": "101", "f2": "Juan Dela Cruz", "f3": "Manager"},
+    {"f1": "102", "f2": "Maria Clara", "f3": "Developer"}
+  ],
+  "inventory": [
+    {"f1": "P-01", "f2": "Laptop", "f3": "10"},
+    {"f1": "P-02", "f2": "Mouse", "f3": "50"}
+  ]
+}
